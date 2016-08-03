@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolBarPetagramMolde"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/colorPrimary"
+    android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    android:elevation="@dimen/elevation_toolbar">
+
+    <RelativeLayout
+        android:id="@+id/layoutActionViewHuella"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/huellaPetagram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/recurso_petagram_icono_huella_blanco"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutActionViewEstrella"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivTituloPetagram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/recurso_petagram_titulo"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/margen_titulo_petagram"/>
+
+        <ImageButton
+            android:id="@+id/top5EstrellaPetagram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/recurso_petagram_icono_estrella_5_blanco"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/margen_derecho_estrella"
+            android:onClick="presionarActionView5FavoritosPetagram"/>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.Toolbar>

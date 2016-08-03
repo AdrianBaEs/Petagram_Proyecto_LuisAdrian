@@ -1,0 +1,16 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="elevation_toolbar">4dp</dimen>
+    <dimen name="elevation_cardview">2dp</dimen>
+    <dimen name="elevation_boton_flotante">6dp</dimen>
+    <dimen name="margen_derecho_estrella">20dp</dimen>
+    <dimen name="cardview_item_recycler_margen_lados">11dp</dimen>
+    <dimen name="tamaño_nombre_cardview_recyclerview">20dp</dimen>
+    <dimen name="tamaño_numero_likes_cardview_recyclerview">21dp</dimen>
+    <dimen name="margen_separacion_numero_likes_cardview_recyclerview">125dp</dimen>
+    <dimen name="radio_esquinas_cardview_recyclerview">12dp</dimen>
+    <dimen name="margen_lados_boton_flotante">15dp</dimen>
+    <dimen name="margen_titulo_petagram">138dp</dimen>
+</resources>
