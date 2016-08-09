@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardViewMiMascota"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardElevation="@dimen/elevation_cardview"
+    android:layout_marginLeft="@dimen/margen_lados_cardview_perfil_mascota"
+    android:layout_marginTop="@dimen/margen_lados_cardview_perfil_mascota"
+    android:layout_marginRight="@dimen/margen_lados_cardview_perfil_mascota"
+    android:layout_marginBottom="@dimen/margen_lados_cardview_perfil_mascota">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutFotosPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivItemRecyclerMiMascotaPetagram"
+            android:layout_width="@dimen/ancho_imagen_perfil_mascota"
+            android:layout_height="@dimen/largo_imagen_perfil_mascota"
+            android:src="@drawable/recurso_petagram_mascota01"
+            android:scaleType="centerCrop"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/tvNumeroLikesMiMascota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="21"
+                android:textSize="@dimen/tamaño_nombre_cardview_recyclerview"
+                android:textStyle="bold|italic"
+                android:layout_gravity="center_vertical"/>
+
+            <ImageView
+                android:id="@+id/ivIconoHuesoAmarilloGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/recurso_petagram_hueso_amarillo_grid"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>
