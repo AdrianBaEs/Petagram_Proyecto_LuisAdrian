@@ -14,4 +14,20 @@
     <dimen name="radio_esquinas_cardview_recyclerview">12dp</dimen>
     <dimen name="margen_lados_boton_flotante">15dp</dimen>
     <dimen name="margen_titulo_petagram">138dp</dimen>
+    <dimen name="tamaño_texto_edit_contacto">16dp</dimen>
+    <dimen name="margen_top_contacto">25dp</dimen>
+    <dimen name="tamaño_imagen_circular">100dp</dimen>
+    <dimen name="ancho_card_biografia">280dp</dimen>
+    <dimen name="largo_card_biografia">300dp</dimen>
+    <dimen name="radio_card">10dp</dimen>
+    <dimen name="ancho_edit_text_contacto">200dp</dimen>
+    <dimen name="largo_edit_text_contacto">50dp</dimen>
+    <dimen name="tamaño_subtitulo_biografia">12dp</dimen>
+    <dimen name="tamaño_nombre_biografia">15dp</dimen>
+    <dimen name="margen_arriba_datos_contacto">128dp</dimen>
+    <dimen name="tamaño_nombre_mascota">21dp</dimen>
+    <dimen name="margen_recycler_mi_mascota">35dp</dimen>
+    <dimen name="margen_lados_cardview_perfil_mascota">5dp</dimen>
+    <dimen name="ancho_imagen_perfil_mascota">100dp</dimen>
+    <dimen name="largo_imagen_perfil_mascota">105dp</dimen>
 </resources>

@@ -1,12 +1,16 @@
 package com.luisadrian.petagram;
 
 import android.content.Intent;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.view.menu.MenuView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -25,8 +29,9 @@ public class MainActivity extends AppCompatActivity {
     ImageButton top5EstrellaPetagram;
     RelativeLayout layoutActionViewHuella;
     RelativeLayout layoutActionViewEstrella;
-    ArrayList<MascotasPetagram> mascotasPetagram;
-    private RecyclerView recyclerViewMainPetagram;
+    TabLayout tabLayoutMain;
+    ViewPager viewPagerMain;
+    ArrayList<Fragment> fragmentsMainActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
         //Definiendo "Toolbar" en esta Activity
         toolBarPetagramMain=(Toolbar) findViewById(R.id.toolBarPetagramMain);
-        setSupportActionBar(toolBarPetagramMain);
+        if(toolBarPetagramMain!=null) {
+            setSupportActionBar(toolBarPetagramMain);
+        }
 
         //Instanciando como objetos los "RelativeLayout" que contienen los "ItemView"
         layoutActionViewHuella=(RelativeLayout) findViewById(R.id.layoutActionViewHuella);
@@ -44,37 +51,28 @@ public class MainActivity extends AppCompatActivity {
         //Instanciando como objeto un ItemView (Estrella que lleva a favoritos)
         top5EstrellaPetagram=(ImageButton) findViewById(R.id.top5EstrellaPetagram);
 
-        //Instanciando el RecyclerView como objeto
-        recyclerViewMainPetagram=(RecyclerView) findViewById(R.id.recyclerViewMainPetagram);
+        //Instanciando como objetos el TabLayout y ViewPager
+        tabLayoutMain=(TabLayout) findViewById(R.id.tabLayoutMain);
+        viewPagerMain=(ViewPager) findViewById(R.id.viewPagerMain);
 
-        //Instanciando un objeto de tipo LinearLayoutManager, definiendo la orientacion y seteando el LayoutManager del RecyclerView
-        LinearLayoutManager ordenRecyclerMain=new LinearLayoutManager(this);
-        ordenRecyclerMain.setOrientation(LinearLayoutManager.VERTICAL);
-        recyclerViewMainPetagram.setLayoutManager(ordenRecyclerMain);
-
-        //Metodos: el primero contiene la colección de datos de la cuál depende el RecyclerView para mostrar contenido, el segundo contiene la instanciacion de un objeto de la clase Adaptadora
-        datosMascotasPetagram();
-        Adaptador();
+        //Dos metodos: Uno inicializa el ArrayList que contiene los Fragments y el otro se encarga de inicializar la adaptacion de los fragments al TabLayout
+        inicializarArrayFragments();
+        inicializarPagerAdapter();
 
     }
 
-    public void Adaptador(){
-        MascotasPetagramAdaptador mascotasPetagramMain=new MascotasPetagramAdaptador(mascotasPetagram,this);
-        recyclerViewMainPetagram.setAdapter(mascotasPetagramMain);
+    public void inicializarArrayFragments(){
+        fragmentsMainActivity= new ArrayList<Fragment>();
+        fragmentsMainActivity.add(new FragmentPrincipal());
+        fragmentsMainActivity.add(new FragmentPerfil());
     }
 
-    public void datosMascotasPetagram(){
-        //Instanciacion del ArrayList
-        mascotasPetagram=new ArrayList<MascotasPetagram>();
-        //Declaramos directamente los objetos de tipo "MascotaPetagram" dentro de cada nuevo indice del ArrayList
-        mascotasPetagram.add(new MascotasPetagram("Tobby",18,R.drawable.recurso_petagram_mascota01));
-        mascotasPetagram.add(new MascotasPetagram("Rocky",6,R.drawable.recurso_petagram_mascota02));
-        mascotasPetagram.add(new MascotasPetagram("Atenea",10,R.drawable.recurso_petagram_mascota03));
-        mascotasPetagram.add(new MascotasPetagram("Angus",9,R.drawable.recurso_petagram_mascota04));
-        mascotasPetagram.add(new MascotasPetagram("Bruno",21,R.drawable.recurso_petagram_mascota05));
-        mascotasPetagram.add(new MascotasPetagram("Luna",14,R.drawable.recurso_petagram_mascota06));
-        mascotasPetagram.add(new MascotasPetagram("Doggy",12,R.drawable.recurso_petagram_mascota07));
-        mascotasPetagram.add(new MascotasPetagram("Blacky",4,R.drawable.recurso_petagram_mascota08));
+    public void inicializarPagerAdapter(){
+        viewPagerMain.setAdapter(new ViewPagerAdaptador(getSupportFragmentManager(),fragmentsMainActivity));
+        tabLayoutMain.setupWithViewPager(viewPagerMain);
+
+        tabLayoutMain.getTabAt(0).setIcon(R.drawable.home_mascotas);
+        tabLayoutMain.getTabAt(1).setIcon(R.drawable.perfil_petagram);
     }
 
     public void presionarActionView5FavoritosPetagram(View v){
@@ -83,4 +81,25 @@ public class MainActivity extends AppCompatActivity {
         startActivity(irMis5FavoritosPetagram);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_opciones,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.opcionContacto:
+                Intent irContacto=new Intent(MainActivity.this,ContactoPetagram.class);
+                startActivity(irContacto);
+                break;
+
+            case R.id.opcionAcercaDe:
+                Intent irAcercaDe=new Intent(MainActivity.this,AcercaDesarrollador.class);
+                startActivity(irAcercaDe);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

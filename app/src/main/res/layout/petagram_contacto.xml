@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.luisadrian.petagram.ContactoPetagram">
+
+    <include
+        android:id="@+id/toolBarContacto"
+        layout="@layout/toolbar">
+    </include>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/toolBarContacto"
+        android:layout_marginTop="@dimen/margen_top_contacto"
+        android:layout_marginBottom="@dimen/margen_top_contacto">
+
+        <ImageView
+            android:id="@+id/ivMensaje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/new_message"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvPetagramContacto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/colorPrimary"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:id="@+id/tvContactanosContacto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/titulo_contacto"
+                android:textColor="@color/colorNombreMascotaPetagram"
+                android:layout_gravity="center_vertical"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutContacto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margen_arriba_datos_contacto"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:weightSum="1">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textLayoutNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_contacto_nombre"
+            android:textColorHint="@color/colorGrisBajo"
+            android:layout_marginTop="@dimen/margen_top_contacto">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/editTextNombre"
+                android:layout_width="@dimen/ancho_edit_text_contacto"
+                android:layout_height="@dimen/largo_edit_text_contacto"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/tamaño_texto_edit_contacto">
+            </android.support.design.widget.TextInputEditText>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textLayoutCorreo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_contacto_correo"
+            android:textColorHint="@color/colorGrisBajo"
+            android:layout_marginTop="@dimen/margen_top_contacto">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/editTextCorreo"
+                android:layout_width="@dimen/ancho_edit_text_contacto"
+                android:layout_height="@dimen/largo_edit_text_contacto"
+                android:inputType="textEmailAddress"
+                android:textSize="@dimen/tamaño_texto_edit_contacto">
+            </android.support.design.widget.TextInputEditText>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textLayoutMensaje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_contacto_mensaje"
+            android:textColorHint="@color/colorGrisBajo"
+            android:layout_marginTop="@dimen/margen_top_contacto">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/editTextMensaje"
+                android:layout_width="@dimen/ancho_edit_text_contacto"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:textSize="@dimen/tamaño_texto_edit_contacto">
+            </android.support.design.widget.TextInputEditText>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/botonEnviarMensajeContacto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/texto_boton_enviar_mensaje"
+            android:layout_marginTop="@dimen/margen_top_contacto"
+            android:theme="@style/estiloRaisedButton"
+            android:onClick="presionarEnviar"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

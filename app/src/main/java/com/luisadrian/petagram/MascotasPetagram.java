@@ -20,6 +20,11 @@ public class MascotasPetagram {
         this.imagenLike=R.drawable.recurso_petagram_like_pet_2;
     }
 
+    public MascotasPetagram(int numeroLikesOtrosUsuarios,int imagenMascota){
+        this.numeroLikesOtrosUsuarios=numeroLikesOtrosUsuarios;
+        this.imagenMascota=imagenMascota;
+    }
+
     public int getNumeroLikesOtrosUsuarios() {
         return numeroLikesOtrosUsuarios;
     }

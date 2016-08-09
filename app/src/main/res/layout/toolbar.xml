@@ -7,8 +7,7 @@
     android:layout_height="?attr/actionBarSize"
     android:background="@color/colorPrimary"
     android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-    android:elevation="@dimen/elevation_toolbar">
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
     <RelativeLayout
         android:id="@+id/layoutActionViewHuella"
@@ -26,18 +25,17 @@
 
     </RelativeLayout>
 
+    <ImageView
+        android:id="@+id/ivTituloPetagram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/recurso_petagram_titulo"
+        android:layout_alignParentRight="true"/>
+
     <RelativeLayout
         android:id="@+id/layoutActionViewEstrella"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/ivTituloPetagram"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/recurso_petagram_titulo"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="@dimen/margen_titulo_petagram"/>
 
         <ImageButton
             android:id="@+id/top5EstrellaPetagram"

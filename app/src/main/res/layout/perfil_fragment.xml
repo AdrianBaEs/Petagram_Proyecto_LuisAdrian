@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.luisadrian.petagram.FragmentPerfil">
+
+    <!-- TODO: Update blank fragment layout -->
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/perfilMiMascota"
+            android:layout_width="@dimen/tamaño_imagen_circular"
+            android:layout_height="@dimen/tamaño_imagen_circular"
+            android:src="@drawable/recurso_petagram_mascota05"
+            app:civ_border="true"
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="2dp"
+            app:civ_shadow="true"
+            app:civ_shadow_radius="6"
+            app:civ_shadow_color="@color/colorPrimaryDark"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margen_top_contacto"/>
+
+        <TextView
+            android:id="@+id/tvNombreMiMascota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nombre_mascota"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:textSize="@dimen/tamaño_nombre_mascota"
+            android:layout_below="@id/perfilMiMascota"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewMiMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margen_recycler_mi_mascota"
+        android:layout_below="@id/tvNombreMiMascota"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/botonFlotantePerfilMiMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/recurso_petagram_icono_camara_blanco1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/margen_lados_boton_flotante"
+        android:layout_marginBottom="@dimen/margen_lados_boton_flotante"
+        android:elevation="@dimen/elevation_boton_flotante">
+
+    </android.support.design.widget.FloatingActionButton>
+
+</RelativeLayout>

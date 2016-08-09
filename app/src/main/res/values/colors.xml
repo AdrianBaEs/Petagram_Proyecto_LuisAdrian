@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#F57C00</color>
     <color name="colorAccent">#FF9800</color>
     <color name="colorNombreMascotaPetagram">#5f000000</color>
+    <color name="colorBlanco">#FFFFFF</color>
+    <color name="colorGrisBajo">#c4c4c4</color>
 </resources>
