@@ -6,6 +6,7 @@ package com.luisadrian.petagram;
 public class MascotasPetagram {
 
     //atributos de una "Mascota de Petagram"
+    private int id;
     private String nombreMascota;
     private int numeroLikesOtrosUsuarios;
     private boolean meGusta;
@@ -23,6 +24,18 @@ public class MascotasPetagram {
     public MascotasPetagram(int numeroLikesOtrosUsuarios,int imagenMascota){
         this.numeroLikesOtrosUsuarios=numeroLikesOtrosUsuarios;
         this.imagenMascota=imagenMascota;
+    }
+
+    public MascotasPetagram(){
+        //Constructor vacio
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getNumeroLikesOtrosUsuarios() {

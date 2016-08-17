@@ -1,6 +1,7 @@
 package com.luisadrian.petagram;
 
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -20,6 +21,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -79,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
         //Acción a realizar del ActionView (Estrella)
         Intent irMis5FavoritosPetagram=new Intent(MainActivity.this,MascotasFavoritas.class);
         startActivity(irMis5FavoritosPetagram);
+
+        Toast.makeText(getApplicationContext(),getResources().getString(R.string.aviso_favoritos),Toast.LENGTH_SHORT).show();
     }
 
     @Override

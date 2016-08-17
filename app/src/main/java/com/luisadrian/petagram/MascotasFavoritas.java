@@ -13,7 +13,7 @@ import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
 
-public class MascotasFavoritas extends AppCompatActivity {
+public class MascotasFavoritas extends AppCompatActivity implements IMascotasFavoritas {
 
     Toolbar toolBarPetagramFavoritos;
     RelativeLayout layoutActionViewHuella;
@@ -21,6 +21,7 @@ public class MascotasFavoritas extends AppCompatActivity {
     ImageButton top5EstrellaPetagram;
     ArrayList<MascotasPetagram> mascotasFavoritasPetagram;
     private RecyclerView recyclerViewFavoritosPetagram;
+    MascotasFavoritasPresentador mascotasFavoritasPresentador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,32 +42,29 @@ public class MascotasFavoritas extends AppCompatActivity {
         //Ahora, utilizamos el metodo "setVisibility" para indicar que el icono "Estrella" NO sera visible en esta Activity
         top5EstrellaPetagram.setVisibility(View.INVISIBLE);
 
-        //Instanciando el RecyclerView como objeto, instanciando un objeto de la clase "LinearLayoutManager" para definir el orden que tomarán los Items
+        //Instanciando el RecyclerView como objeto
         recyclerViewFavoritosPetagram=(RecyclerView) findViewById(R.id.recyclerViewFavoritosPetagram);
+
+        //Instanciar el presentador como objeto (inicializar el proceso)
+        mascotasFavoritasPresentador=new MascotasFavoritasPresentador(this,getBaseContext());
+
+    }
+
+    @Override
+    public MascotasPetagramAdaptador crearAdaptador(ArrayList<MascotasPetagram> mascotasFavoritas) {
+        MascotasPetagramAdaptador mascotasPetagramFavoritos=new MascotasPetagramAdaptador(mascotasFavoritas,this);
+        return mascotasPetagramFavoritos;
+    }
+
+    @Override
+    public void inicializarAdaptador(MascotasPetagramAdaptador adaptadorMascotasFavoritas) {
+        recyclerViewFavoritosPetagram.setAdapter(adaptadorMascotasFavoritas);
+    }
+
+    @Override
+    public void inicializarLayoutManager() {
         LinearLayoutManager ordenRecyclerFavoritos=new LinearLayoutManager(this);
         ordenRecyclerFavoritos.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerViewFavoritosPetagram.setLayoutManager(ordenRecyclerFavoritos);
-
-        //2 Metodos: El primero contiene la colección de datos y el segundo la instancianción del objeto de la clase "Adaptador"
-        coleccionDatosFavoritosPetagram();
-        AdaptadorFavoritos();
-
     }
-
-    public void coleccionDatosFavoritosPetagram(){
-        //Instanciacion del ArrayList (Colección de datos)
-        mascotasFavoritasPetagram=new ArrayList<MascotasPetagram>();
-        //Añadiendo 5 objetos de tipo MascotasPetagram
-        mascotasFavoritasPetagram.add(new MascotasPetagram("Bruno",21,R.drawable.recurso_petagram_mascota05));
-        mascotasFavoritasPetagram.add(new MascotasPetagram("Tobby",18,R.drawable.recurso_petagram_mascota01));
-        mascotasFavoritasPetagram.add(new MascotasPetagram("Luna",14,R.drawable.recurso_petagram_mascota06));
-        mascotasFavoritasPetagram.add(new MascotasPetagram("Doggy",12,R.drawable.recurso_petagram_mascota07));
-        mascotasFavoritasPetagram.add(new MascotasPetagram("Atenea",10,R.drawable.recurso_petagram_mascota03));
-    }
-
-    public void AdaptadorFavoritos(){
-        MascotasPetagramAdaptador mascotasPetagramFavoritos=new MascotasPetagramAdaptador(mascotasFavoritasPetagram,this);
-        recyclerViewFavoritosPetagram.setAdapter(mascotasPetagramFavoritos);
-    }
-
 }

@@ -46,7 +46,9 @@ public class MascotasPetagramAdaptador extends RecyclerView.Adapter<MascotasPeta
             public void onClick(View v){
                 if(activity.getClass()==MainActivity.class){
                     Toast.makeText(activity,"Has dado like a "+holder.tvNombreMascotaPetagram.getText(),Toast.LENGTH_SHORT).show();
-                    holder.tvNumeroLikesMascotaPetagram.setText(mascotaPetagram.getNumeroLikesOtrosUsuarios()+1+"");
+                    MediadorMascotasPetagram mediadorMascotasPetagram=new MediadorMascotasPetagram(activity);
+                    mediadorMascotasPetagram.insertarMascotaFavorita(mascotaPetagram);
+                    holder.tvNumeroLikesMascotaPetagram.setText(""+mediadorMascotasPetagram.mostrarLikesMascota(mascotaPetagram));
                 }
             }
         });
