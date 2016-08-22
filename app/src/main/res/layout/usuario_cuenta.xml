@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.luisadrian.petagram.CuentaUsuario">
+
+    <include android:id="@+id/toolBarCuenta"
+        layout="@layout/toolbar">
+    </include>
+
+    <LinearLayout
+        android:id="@+id/linearTituloCuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/toolBarCuenta"
+        android:layout_marginTop="@dimen/margen_titulo_activity_cuenta">
+
+        <ImageView
+            android:id="@+id/ivPerfilCuenta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/recurso_petagram_instagram"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvPetagramCuenta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/colorPrimary"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:id="@+id/tvPerfilCuenta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/texto_cuenta"
+                android:textColor="@color/colorNombreMascotaPetagram"
+                android:layout_gravity="center_vertical"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearEditTextUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/linearTituloCuenta"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_centerHorizontal="true">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textLayoutCuentaPrincipal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/editTextUsuario"
+                android:layout_width="@dimen/ancho_edit_text_cuenta"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_cuenta"
+                android:textSize="@dimen/tamaño_texto_edit_contacto"
+                android:textColorHint="@color/colorGrisBajo"
+                android:textStyle="normal"
+                android:inputType="textPersonName"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/botonSincronizarCuentaUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/texto_boton_cuenta"
+        android:layout_alignParentBottom="true"
+        android:theme="@style/estiloRaisedButton"
+        android:onClick="presionarSincronizarCuenta"/>
+
+</RelativeLayout>

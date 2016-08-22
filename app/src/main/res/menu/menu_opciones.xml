@@ -13,4 +13,10 @@
         android:orderInCategory="2">
     </item>
 
+    <item
+        android:id="@+id/opcionConfigurarCuenta"
+        android:title="@string/item_configurar"
+        android:orderInCategory="3">
+    </item>
+
 </menu>

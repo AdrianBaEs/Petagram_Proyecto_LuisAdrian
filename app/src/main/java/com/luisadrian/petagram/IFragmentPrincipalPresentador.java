@@ -10,5 +10,7 @@ public interface IFragmentPrincipalPresentador {
     //Metodos del presentador de fragment principal
     public void consultarBaseDatos();
     public void mostrarDatosRecuperados();
+    public void obtenerImagenesMascotas();
+    public void obtenerSeguidores();
 
 }

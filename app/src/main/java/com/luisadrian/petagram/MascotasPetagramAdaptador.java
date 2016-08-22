@@ -38,7 +38,7 @@ public class MascotasPetagramAdaptador extends RecyclerView.Adapter<MascotasPeta
         final MascotasPetagram mascotaPetagram=mascotasPetagramColeccion.get(position);
         holder.tvNombreMascotaPetagram.setText(mascotaPetagram.getNombreMascota());
         holder.tvNumeroLikesMascotaPetagram.setText(mascotaPetagram.getNumeroLikesOtrosUsuarios()+"");
-        holder.ibItemRecyclerPetagram.setImageResource(mascotaPetagram.getImagenMascota());
+        //holder.ibItemRecyclerPetagram.setImageResource(mascotaPetagram.getImagenMascota());
         if(activity.getClass()==MascotasFavoritas.class){
             holder.ivIconoLikePetagram.setBackgroundResource(mascotaPetagram.getImagenLike());
         }

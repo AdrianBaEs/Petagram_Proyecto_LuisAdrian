@@ -15,6 +15,10 @@
     <string name="nombre_mascota">Bruno</string>
     <string name="aviso_sin_favoritos">Aqui podrás visualizar a tus ultimas 5 mascotas favoritas</string>
     <string name="aviso_favoritos">Mascotas favoritas</string>
+    <string name="hint_cuenta">Nombre de usuario</string>
+    <string name="texto_cuenta">Sincroniza Instagram</string>
+    <string name="texto_boton_cuenta">SINCRONIZAR CUENTA</string>
+    <string name="item_configurar">Configurar cuenta</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

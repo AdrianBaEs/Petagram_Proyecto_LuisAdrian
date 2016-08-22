@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 /**
@@ -33,7 +35,8 @@ public class MiMascotaPetagramAdaptador extends RecyclerView.Adapter<MiMascotaPe
     @Override
     public void onBindViewHolder(MiMascotaPetagramViewHolder holder, int position) {
         MascotasPetagram fotosMiMascotaPetagram=fotosMiMascota.get(position);
-        holder.ivItemRecyclerMiMascotaPetagram.setImageResource(fotosMiMascotaPetagram.getImagenMascota());
+        //holder.ivItemRecyclerMiMascotaPetagram.setImageResource(fotosMiMascotaPetagram.getImagenMascota());
+        Picasso.with(activity).load(fotosMiMascotaPetagram.getImagenMascota()).placeholder(R.drawable.home_mascotas).into(holder.ivItemRecyclerMiMascotaPetagram);
         holder.tvNumeroLikesMiMascota.setText(fotosMiMascotaPetagram.getNumeroLikesOtrosUsuarios()+"");
     }
 

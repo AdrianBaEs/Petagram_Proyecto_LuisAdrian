@@ -1,6 +1,8 @@
 package com.luisadrian.petagram;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     TabLayout tabLayoutMain;
     ViewPager viewPagerMain;
     ArrayList<Fragment> fragmentsMainActivity;
+    private String perfilInstagram;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +47,11 @@ public class MainActivity extends AppCompatActivity {
         toolBarPetagramMain=(Toolbar) findViewById(R.id.toolBarPetagramMain);
         if(toolBarPetagramMain!=null) {
             setSupportActionBar(toolBarPetagramMain);
+        }
+
+        ObtenerPerfilShared();
+        if(perfilInstagram.equals("")){
+            crearPerfilShared();
         }
 
         //Instanciando como objetos los "RelativeLayout" que contienen los "ItemView"
@@ -103,7 +111,24 @@ public class MainActivity extends AppCompatActivity {
                 Intent irAcercaDe=new Intent(MainActivity.this,AcercaDesarrollador.class);
                 startActivity(irAcercaDe);
                 break;
+
+            case R.id.opcionConfigurarCuenta:
+                Intent irCuentaUsuario=new Intent(MainActivity.this,CuentaUsuario.class);
+                startActivity(irCuentaUsuario);
+                break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void crearPerfilShared() {
+        SharedPreferences perfilInstagram = getSharedPreferences("shared", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = perfilInstagram.edit();
+        editor.putString("perfilInstagram", "mascotabruno123");
+        editor.commit();
+    }
+
+    private void ObtenerPerfilShared(){
+        SharedPreferences misReferencias = getSharedPreferences("shared", Context.MODE_PRIVATE);
+        perfilInstagram = misReferencias.getString("perfilInstagram", "");
     }
 }

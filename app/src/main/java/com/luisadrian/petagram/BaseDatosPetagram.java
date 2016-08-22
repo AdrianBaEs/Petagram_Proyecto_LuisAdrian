@@ -57,7 +57,7 @@ public class BaseDatosPetagram extends SQLiteOpenHelper {
         SQLiteDatabase baseDatos=this.getWritableDatabase();
         Cursor ejecucionQuery=baseDatos.rawQuery(queryRecuperarTablaPrincipal,null);
 
-        while(ejecucionQuery.moveToNext()){
+        /*while(ejecucionQuery.moveToNext()){
             MascotasPetagram mascotaPetagramRecovered=new MascotasPetagram();
 
             mascotaPetagramRecovered.setId(ejecucionQuery.getInt(0));
@@ -78,7 +78,7 @@ public class BaseDatosPetagram extends SQLiteOpenHelper {
             }
 
             todasLasMascotas.add(mascotaPetagramRecovered);
-        }
+        }*/
 
         baseDatos.close();
         return todasLasMascotas;
@@ -99,7 +99,7 @@ public class BaseDatosPetagram extends SQLiteOpenHelper {
         SQLiteDatabase baseDatos=this.getWritableDatabase();
         Cursor ejecucionQueryTop=baseDatos.rawQuery(queryRecuperarMasVotados,null);
 
-        while(ejecucionQueryTop.moveToNext()){
+        /*while(ejecucionQueryTop.moveToNext()){
             MascotasPetagram mascotaVotada=new MascotasPetagram();
 
             mascotaVotada.setId(ejecucionQueryTop.getInt(0));
@@ -109,7 +109,7 @@ public class BaseDatosPetagram extends SQLiteOpenHelper {
 
             topRankingPetagram.add(mascotaVotada);
 
-        }
+        }*/
 
         baseDatos.close();
         return topRankingPetagram;

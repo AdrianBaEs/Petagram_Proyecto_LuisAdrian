@@ -30,4 +30,6 @@
     <dimen name="margen_lados_cardview_perfil_mascota">5dp</dimen>
     <dimen name="ancho_imagen_perfil_mascota">100dp</dimen>
     <dimen name="largo_imagen_perfil_mascota">105dp</dimen>
+    <dimen name="margen_titulo_activity_cuenta">130dp</dimen>
+    <dimen name="ancho_edit_text_cuenta">225dp</dimen>
 </resources>

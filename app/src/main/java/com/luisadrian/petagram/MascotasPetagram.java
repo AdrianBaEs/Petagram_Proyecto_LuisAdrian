@@ -6,22 +6,20 @@ package com.luisadrian.petagram;
 public class MascotasPetagram {
 
     //atributos de una "Mascota de Petagram"
-    private int id;
+    private String id;
     private String nombreMascota;
     private int numeroLikesOtrosUsuarios;
-    private boolean meGusta;
-    private int imagenMascota;
+    private String imagenMascota;
     private int imagenLike;
 
-    public MascotasPetagram(String nombreMascota,int numeroLikesOtrosUsuarios,int imagenMascota){
+    public MascotasPetagram(String nombreMascota,int numeroLikesOtrosUsuarios,String imagenMascota){
         this.nombreMascota=nombreMascota;
         this.numeroLikesOtrosUsuarios=numeroLikesOtrosUsuarios;
-        this.meGusta=false;
         this.imagenMascota=imagenMascota;
         this.imagenLike=R.drawable.recurso_petagram_like_pet_2;
     }
 
-    public MascotasPetagram(int numeroLikesOtrosUsuarios,int imagenMascota){
+    public MascotasPetagram(int numeroLikesOtrosUsuarios,String imagenMascota){
         this.numeroLikesOtrosUsuarios=numeroLikesOtrosUsuarios;
         this.imagenMascota=imagenMascota;
     }
@@ -30,11 +28,11 @@ public class MascotasPetagram {
         //Constructor vacio
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -54,19 +52,11 @@ public class MascotasPetagram {
         this.nombreMascota = nombreMascota;
     }
 
-    public boolean isMeGusta() {
-        return meGusta;
-    }
-
-    public void setMeGusta(boolean meGusta) {
-        this.meGusta = meGusta;
-    }
-
-    public int getImagenMascota() {
+    public String getImagenMascota() {
         return imagenMascota;
     }
 
-    public void setImagenMascota(int imagenMascota) {
+    public void setImagenMascota(String imagenMascota) {
         this.imagenMascota = imagenMascota;
     }
 
